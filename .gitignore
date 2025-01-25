@@ -1,0 +1,109 @@
+# Este .gitignore está diseñado para Unity, proyectos 2D y móviles
+# Basado en https://github.com/github/gitignore/blob/main/Unity.gitignore
+
+# Ignorar carpetas generadas por Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Ignorar capturas de memoria (pueden contener datos sensibles)
+/[Mm]emoryCaptures/
+
+# Ignorar grabaciones (pueden ser grandes)
+/[Rr]ecordings/
+
+# Ignorar herramientas de la Asset Store
+/[Aa]ssets/AssetStoreTools*
+
+# Ignorar plugin JetBrains Rider
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# Ignorar archivos temporales y de caché de Visual Studio
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Ignorar archivos generados de Unity en errores
+sysinfo.txt
+
+# Ignorar archivos empaquetados o generados
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Ignorar archivos de compilación de Crashlytics
+crashlytics-build.properties
+
+# Ignorar archivos generados de Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Ignorar archivos de configuración específicos del sistema operativo
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Ignorar temporales de editores de texto y Unity
+*.swp
+*.bak
+*.orig
+*.tmp
+
+# Ignorar carpetas específicas de plataformas móviles
+# iOS
+/[Bb]uild/[Ii]OS/
+*.xcworkspace
+*.xcuserdata
+*.xcuserstate
+
+# Android
+/[Bb]uild/[Aa]ndroid/
+.gradle/
+*.apk
+*.aab
+
+# Ignorar backups y archivos locales
+Backup/
+Temp/
+
+# Ignorar cualquier archivo de caché generado por herramientas externas
+/.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignorar configuraciones de Unity Collab
+/[Cc]ollab/
+
+# Ignorar archivos de paquetes npm (si usas algo con npm)
+/node_modules/
+/package-lock.json
+
+# Fin del .gitignore
