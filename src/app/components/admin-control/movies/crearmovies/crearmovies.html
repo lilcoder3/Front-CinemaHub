@@ -1,0 +1,63 @@
+<div class="group">
+    <div class="title-container"><h1>Registro</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+
+      <mat-form-field appearance="fill" *ngIf="ediciongender">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código" formControlName="id" readonly/>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="Nombre Pelicula" formControlName="namemovie" />
+        <mat-error *ngIf="form.get('namemovie')?.hasError('required')">
+          El nommbre de pelicula es obligatorio.</mat-error
+        >
+      </mat-form-field>
+        
+      <mat-form-field>
+        <input matInput placeholder="Año pelicula" formControlName="yearmovie" />
+        <mat-error *ngIf="form.get('yearmovie')?.hasError('required')">
+          El año de la pelicula es obligatorio.</mat-error
+        >
+      </mat-form-field>
+        
+      <mat-form-field>
+        <input matInput placeholder="Tipo pelicula" formControlName="typemovie" />
+        <mat-error *ngIf="form.get('typemovie')?.hasError('required')">
+          El tipo de la pelicula es obligatorio.</mat-error
+        >
+      </mat-form-field>
+        
+        <mat-form-field>
+        <input matInput placeholder="Edad minima" formControlName="yearold" />
+        <mat-error *ngIf="form.get('yearold')?.hasError('required')">
+          La edad mininma es obligatorio.</mat-error
+        >
+      </mat-form-field>
+        
+        <mat-form-field>
+        <input matInput placeholder="Director" formControlName="director" />
+        <mat-error *ngIf="form.get('director')?.hasError('required')">
+          El director es obligatorio.</mat-error
+        >
+      </mat-form-field>
+       
+        <mat-form-field>
+        <input matInput placeholder="Descripcion pelicula" formControlName="description" />
+        <mat-error *ngIf="form.get('description')?.hasError('required')">
+          La descripcion de la pelicula es obligatoria.</mat-error
+        >
+      </mat-form-field>
+       
+        <mat-form-field>
+        <input matInput placeholder="El url de la imagen es obligatoria" formControlName="urlimage" />
+        <mat-error *ngIf="form.get('urlimage')?.hasError('required')">
+          La imagen es obligatoria.</mat-error
+        >
+      </mat-form-field>
+     
+      <button mat-raised-button color="warn" >Aceptar</button> <br>
+      <button mat-raised-button color="warn" routerLink="/movies">Cancelar</button> 
+    </form>
+</div>
+  

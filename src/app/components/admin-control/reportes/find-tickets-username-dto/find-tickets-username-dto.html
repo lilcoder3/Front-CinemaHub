@@ -1,0 +1,17 @@
+<div class="container" style="text-align: center;">
+  <h2>Tickets comprados por Usuario</h2>
+
+  <label for="username">Nombre de usuario:</label>
+  <input type="text" [(ngModel)]="username" placeholder="Ej: username" id="username" />
+  <button (click)="buscarTickets()">Buscar</button>
+
+  <div class="chart-container" style="max-width: 600px; margin: 20px auto;">
+    <canvas
+      baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [type]="lineChartType"
+      [legend]="lineChartLegend">
+    </canvas>
+  </div>
+</div>

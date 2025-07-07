@@ -1,0 +1,29 @@
+<section class="login-section">
+   
+   <div class="wrapper">
+         <div class="title">Login</div>
+     <form (ngSubmit)="login()">
+       <div class="field">
+         <input matInput placeholder="Usuario" [(ngModel)]="username" name="username" required>
+         <label>Usuario</label>
+       </div>
+       <div class="field">
+         <input
+           type="password"
+           matInput
+           placeholder="Contraseña"
+           [(ngModel)]="password"
+           name="password"
+           required
+         >
+         <label>Contraseña</label>
+       </div>
+       <div class="field">
+         <input type="submit" value="Login">
+       </div>
+       <div class="signup-link">
+         ¿No eres de aquí? <a [routerLink]="['/landinghome']">Inicio</a>
+       </div>
+     </form>
+   </div>
+ </section>

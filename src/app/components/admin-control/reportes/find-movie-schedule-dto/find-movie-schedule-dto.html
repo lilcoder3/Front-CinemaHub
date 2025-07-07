@@ -1,0 +1,17 @@
+<div class="container" style="text-align: center;">
+  <h2>Funciones por Cine</h2>
+
+  <label for="cinema">Nombre del Cine:</label>
+  <input type="text" [(ngModel)]="cinemaName" placeholder="Ej: Cineplanet" id="cinema" />
+  <button (click)="buscarFunciones()">Buscar</button>
+
+  <div class="chart-container" style="max-width: 600px; margin: 20px auto;">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="barChartType"
+      [legend]="barChartLegend">
+    </canvas>
+  </div>
+</div>

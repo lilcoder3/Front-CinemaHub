@@ -1,0 +1,179 @@
+<mat-toolbar  *ngIf="verificar()" class="custom-toolbar">
+    <div class="logo">CINEMAHUB+</div>
+   
+  
+  <button mat-button [matMenuTriggerFor]="menuSalir" class="custom-button">
+    <mat-icon>person</mat-icon><span class="button-text">Perfil</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuCines" class="custom-button">
+    <mat-icon>face</mat-icon><span class="button-text">Cines</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuCinesRooms" class="custom-button">
+    <mat-icon>wc</mat-icon><span class="button-text">CineRooms</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuCities" class="custom-button">
+    <mat-icon>people</mat-icon><span class="button-text">Ciudades</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuFunciones" class="custom-button">
+    <mat-icon>assignment_ind</mat-icon><span class="button-text">Funciones del cine</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuMovieCinema" class="custom-button">
+    <mat-icon>school</mat-icon><span class="button-text">Pelicula por Cines</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuMovie" class="custom-button">
+    <mat-icon>report_problem</mat-icon><span class="button-text">Peliculas</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuReviews" class="custom-button">
+    <mat-icon>psychology</mat-icon><span class="button-text">Reviews</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuRoles"  class="custom-button" *ngIf="isAdmin()">
+    <mat-icon>question_answer</mat-icon><span class="button-text">Roles</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuRooms" class="custom-button">
+    <mat-icon>chat</mat-icon><span class="button-text">Salas</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuTickets" class="custom-button">
+    <mat-icon>schedule</mat-icon><span class="button-text">Tickets</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuTipoPago" class="custom-button" *ngIf="isAdmin()">
+    <mat-icon>meeting_room</mat-icon><span class="button-text">Tipos de pago</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuUsers" class="custom-button" *ngIf="isAdmin()">
+    <mat-icon>assignment</mat-icon><span class="button-text">Usuarios</span>
+  </button>
+  <button mat-button [matMenuTriggerFor]="menuReport">
+    <mat-icon>file_copy</mat-icon> Reportes
+  </button>
+</mat-toolbar>
+
+<mat-menu #menuCines="matMenu">
+  <button mat-menu-item routerLink="/cinema"  >
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/cinema/registercinema" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar Cine
+  </button>
+</mat-menu>
+
+<mat-menu #menuCinesRooms="matMenu">
+  <button mat-menu-item routerLink="/cinemarooms"  >
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/cinemarooms/registrarcinemarooms" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar CineRoom
+  </button>
+</mat-menu>
+
+<mat-menu #menuCities="matMenu">
+  <button mat-menu-item routerLink="/cities">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/cities/registrarctiy" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar Ciudad
+  </button>
+</mat-menu>
+
+<mat-menu #menuFunciones="matMenu">
+  <button mat-menu-item routerLink="/funcionescine">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/funcionescine/registrarfuncionescine" >
+    <mat-icon>add</mat-icon>Insertar Funciones cine
+  </button>
+</mat-menu>
+
+<mat-menu #menuMovieCinema="matMenu">
+  <button mat-menu-item routerLink="/moviecinema">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/moviecinema/registarmoviecinema" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar MovieCinema
+  </button>
+</mat-menu>
+
+<mat-menu #menuMovie="matMenu">
+  <button mat-menu-item routerLink="/movies">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/movies/registrarmovie" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar Pelicula
+  </button>
+</mat-menu>
+
+<mat-menu #menuReviews="matMenu">
+  <button mat-menu-item routerLink="/reviews">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/reviews/registrarreview">
+    <mat-icon>add</mat-icon>Insertar Review
+  </button>
+</mat-menu>
+
+<mat-menu #menuRoles="matMenu">
+  <button mat-menu-item routerLink="/roles">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/roles/registraroles" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar Roles
+  </button>
+</mat-menu>
+
+<mat-menu #menuRooms="matMenu">
+  <button mat-menu-item routerLink="/rooms">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/rooms/registrarooms" *ngIf="isAdmin()">
+    <mat-icon>add</mat-icon>Insertar Rooms
+  </button>
+</mat-menu>
+
+<mat-menu #menuTickets="matMenu">
+  <button mat-menu-item routerLink="/tickets">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/tickets/registrartickets">
+    <mat-icon>add</mat-icon>Insertar Tickets
+  </button>
+</mat-menu>
+
+<mat-menu #menuTipoPago="matMenu">
+  <button mat-menu-item routerLink="/typepayment">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/typepayment/registrartype" >
+    <mat-icon>add</mat-icon>Insertar Registro de Type
+  </button>
+</mat-menu>
+
+<mat-menu #menuUsers="matMenu">
+  <button mat-menu-item routerLink="/users">
+    <mat-icon>list</mat-icon>Listar
+  </button>
+</mat-menu>
+
+
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="eliminar()">
+    <mat-icon>logout</mat-icon>Cerrar sesión
+  </button>
+  <button mat-menu-item>
+    Rol: <span>{{ role }}</span>
+    <p>Nombre de usuario: {{ username }}</p>
+  </button>
+</mat-menu>
+
+<mat-menu #menuReport="matMenu">
+  <button mat-menu-item routerLink="/reportes/find-movie-schedule">Buscar funciones por cine</button>
+  <button mat-menu-item routerLink="/reportes/find-tickets-username" *ngIf="isAdmin()">Buscar tickets por usuario</button>
+  <button mat-menu-item routerLink="/reportes/get-movie-review">Reseñas de película</button>
+  <button mat-menu-item routerLink="/reportes/quantity-functions-cinema" *ngIf="isAdmin()">Cantidad funciones por cine</button>
+  <button mat-menu-item routerLink="/reportes/quantity-functions-user-date"*ngIf="isAdmin()" >Funciones por usuario y fecha</button>
+  <button mat-menu-item routerLink="/reportes/quantity-functions-users" *ngIf="isAdmin()">Cantidad funciones por usuario</button>
+  <button mat-menu-item routerLink="/reportes/quantity-movies-city" *ngIf="isAdmin()">Películas proyectadas por ciudad</button>
+  <button mat-menu-item routerLink="/reportes/quantity-tickets-cinema" *ngIf="isAdmin()">Tickets vendidos por cine</button>
+  <button mat-menu-item routerLink="/reportes/quantity-total-revenue-by-payment" *ngIf="isAdmin()">Recaudación por tipo de pago</button>
+  <button mat-menu-item routerLink="/reportes/quantity-total-revenue-by-payment-date" *ngIf="isAdmin()">Recaudación por pago y fecha</button>
+</mat-menu>
+
+
+<router-outlet></router-outlet>

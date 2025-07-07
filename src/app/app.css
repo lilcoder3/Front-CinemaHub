@@ -1,0 +1,109 @@
+/* Estilo global para la toolbar */
+.custom-toolbar {
+  background-color: #A7C7E7; /* Fondo pastel azul */
+  padding: 10px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo en el navbar */
+.custom-toolbar .logo {
+  font-size: 1em;
+  font-weight: bold;
+  color: #2a2a2a;
+  margin-left: 4px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* Contenedor de botones en la toolbar */
+.custom-toolbar .mat-button {
+  color: #333;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+/* Ajustes para los botones en el navbar */
+.custom-toolbar .mat-button:hover {
+  background-color: #FF4081;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-toolbar .mat-icon {
+  margin-right: 10px;
+}
+
+/* Ajuste en la visualización de los menús dentro de la barra de herramientas */
+.custom-button {
+  font-size: 1em;
+  padding: 10px 15px;
+  color: #333;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-button:hover {
+  background-color: #FF4081;
+  color: white;
+}
+
+/* Espaciado entre los botones */
+.mat-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilo para los botones del menú de opciones */
+.mat-menu-item {
+  padding: 12px 20px;
+  color: #2a2a2a;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.mat-menu-item:hover {
+  background-color: #FF4081;
+  color: white;
+}
+
+/* Estilo del ícono de logout */
+.mat-menu-item.logout {
+  color: #FF4081;
+}
+
+.mat-menu-item.logout:hover {
+  background-color: #FF3366;
+  color: white;
+}
+
+/* Estilo del botón de "Cerrar sesión" */
+.mat-menu-item p {
+  font-size: 0.9em;
+  color: #2a2a2a;
+}
+
+.mat-menu-item.logout .mat-icon {
+  margin-right: 10px;
+}
+
+/* Mejorando el icono dentro de los botones */
+.mat-icon {
+  color: #FF4081;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.mat-menu-panel {
+  background-color: #A7C7E7;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

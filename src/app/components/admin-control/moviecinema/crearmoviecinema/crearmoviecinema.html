@@ -1,0 +1,55 @@
+<div class="title-container">
+  <h1 class="title">Registro de Función de Película</h1>
+</div>
+
+<div class="container" style="text-align: center">
+  <form [formGroup]="form" (ngSubmit)="aceptar()" class="example-form">
+
+    <mat-form-field class="example-full-width" *ngIf="edicion">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="ID" formControlName="id" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cine - Sala</mat-label>
+      <mat-select formControlName="cinemaroom">
+        <mat-option *ngFor="let cr of listCinemaRooms" [value]="cr.id">
+          {{ cr.cinema.localname }} - Sala {{ cr.rooms.nameroom }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Película</mat-label>
+      <mat-select formControlName="movie">
+        <mat-option *ngFor="let m of listMovies" [value]="m.id">
+          {{ m.namemovie }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Fecha -->
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Fecha de Función</mat-label>
+      <input matInput [matDatepicker]="datePicker" placeholder="Selecciona la fecha" formControlName="date" />
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Hora de Inicio -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Hora de Inicio (HH:mm)</mat-label>
+      <input matInput type="time" formControlName="startTime" required />
+    </mat-form-field> 
+
+    <!-- Hora de Fin -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Hora de Fin (HH:mm)</mat-label>
+      <input matInput type="time" formControlName="endTime" required />
+    </mat-form-field>
+
+    <br /><br />
+    <button mat-raised-button color="primary" type="submit">Aceptar</button>
+    <button mat-raised-button color="warn" type="button" (click)="cancelar()">Cancelar</button>
+  </form>
+</div>

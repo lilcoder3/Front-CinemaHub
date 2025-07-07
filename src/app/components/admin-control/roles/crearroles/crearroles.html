@@ -1,0 +1,41 @@
+<div class="group">
+  <h1 class="title">Registro de Roles de Usuario</h1>
+
+
+  <div class="container" style="text-align: center">
+  <form [formGroup]="form" (ngSubmit)="aceptar()" class="example-form">
+
+    <!-- Mostrar campo ID solo si está en modo edición -->
+    <mat-form-field class="example-full-width" *ngIf="edicion">
+      <mat-label>ID</mat-label>
+      <input matInput formControlName="id" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" >
+      <mat-label>Usuario</mat-label>
+      <mat-select formControlName="user">
+        <mat-option *ngFor="let usuario of listUsuarios" [value]="usuario.id">
+          {{ usuario.username }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('user')?.hasError('required')">
+        Debes seleccionar un usuario.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Rol</mat-label>
+      <input matInput placeholder="Rol" formControlName="rol" />
+      <mat-error *ngIf="form.get('rol')?.hasError('required')">
+        El rol es requerido.
+      </mat-error>
+    </mat-form-field>
+
+    <br /><br />
+
+    <button mat-raised-button color="primary" type="submit">Aceptar</button> <br><br>
+    <button mat-raised-button color="warn" routerLink="/roles">Cancelar</button>
+
+  </form> 
+</div> 
+</div>

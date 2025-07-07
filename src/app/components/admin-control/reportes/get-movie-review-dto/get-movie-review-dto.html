@@ -1,0 +1,13 @@
+<div style="text-align: center">
+  <h2>Estadísticas de Reseñas por Película</h2>
+  <input type="text" [(ngModel)]="movieName" placeholder="Nombre de la película" />
+  <button (click)="buscarResenas()">Buscar</button>
+
+  <div class="chart-container" style="max-width: 600px; margin-top: 20px;">
+    <canvas baseChart
+      [data]="chartData"
+      [type]="chartType"
+      [options]="{ responsive: true }">
+    </canvas>
+  </div>
+</div>

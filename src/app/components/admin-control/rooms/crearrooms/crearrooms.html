@@ -1,0 +1,22 @@
+<div class="group">
+    <div class="title-container"><h1>Registro</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+
+      <mat-form-field appearance="fill" *ngIf="ediciongender">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código" formControlName="id" readonly/>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="Nombre de la sala" formControlName="nameroom" />
+        <mat-error *ngIf="form.get('nameroom')?.hasError('required')">
+          El nommbre de pelicula es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      
+      <br/>
+      <button mat-raised-button color="warn" >Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/rooms">Cancelar</button> 
+    </form>
+</div>
+  

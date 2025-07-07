@@ -1,0 +1,43 @@
+<div class="title-container">
+  <h1 class="title">Registro de Asignación Cine - Sala</h1>
+</div>
+
+<div class="container" style="text-align: center">
+  <form [formGroup]="form" (ngSubmit)="aceptar()" class="example-form">
+
+    <mat-form-field class="example-full-width" *ngIf="edicion">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="ID" formControlName="id" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cine</mat-label>
+      <mat-select formControlName="cine">
+        <mat-option *ngFor="let cine of listCinemas" [value]="cine.id">
+          {{ cine.localname }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('cine')?.hasError('required')">
+        Debes seleccionar un cine.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Sala</mat-label>
+      <mat-select formControlName="sala">
+        <mat-option *ngFor="let sala of listRooms" [value]="sala.id">
+          {{ sala.nameroom }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('sala')?.hasError('required')">
+        Debes seleccionar una sala.
+      </mat-error>
+    </mat-form-field>
+
+    <br /><br />
+
+    <button mat-raised-button color="primary" type="submit">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/cinemarooms">Cancelar</button>
+
+  </form>
+</div>

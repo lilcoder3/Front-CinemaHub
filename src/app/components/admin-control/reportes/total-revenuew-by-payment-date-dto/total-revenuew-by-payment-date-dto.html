@@ -1,0 +1,19 @@
+<div style="text-align: center;">
+  <h2>Ingresos por Método de Pago y Rango de Fecha</h2>
+
+  <label for="start">Fecha Inicio:</label>
+  <input type="date" id="start" [(ngModel)]="startDate" />
+
+  <label for="end">Fecha Fin:</label>
+  <input type="date" id="end" [(ngModel)]="endDate" />
+
+  <button (click)="buscarIngresos()">Buscar</button>
+
+  <div class="chart-container" style="max-width: 700px; margin: 30px auto;">
+    <canvas baseChart
+      [data]="chartData"
+      [type]="chartType"
+      [options]="{ responsive: true }">
+    </canvas>
+  </div>
+</div>

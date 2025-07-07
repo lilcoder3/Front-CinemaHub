@@ -1,0 +1,128 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #A7C7E7; /* Fondo pastel azul */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.navbar .logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.navbar .search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 250px;
+}
+
+.search-btn {
+  padding: 10px;
+  background-color: #FF4081;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #FF3366;
+}
+
+/* Links de autenticación */
+.auth-links a {
+  margin-left: 15px;
+  color: #1e88e5;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+/* Películas */
+.movies-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movies-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.movie-card {
+  text-align: center;
+}
+
+.movie-image {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card h3 {
+  font-size: 1.1em;
+  margin-top: 10px;
+  color: #333;
+}
+
+.view-options-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #FF4081;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.view-options-btn:hover {
+  background-color: #FF3366;
+}
+
+/* Botones de navegación */
+.prev-btn, .next-btn {
+  padding: 15px;
+  background-color: #FF4081;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: #FF3366;
+}
+
+.prev-btn {
+  margin-right: 20px;
+}
+
+.next-btn {
+  margin-left: 20px;
+}

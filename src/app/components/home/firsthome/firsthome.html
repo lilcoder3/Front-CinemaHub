@@ -1,0 +1,30 @@
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">CINEMAHUB+</div>
+  <div class="search-container">
+    <input type="text" placeholder="¿Qué quieres ver hoy?" class="search-input" />
+    <button class="search-btn">Buscar</button>
+  </div>
+  <div class="auth-links">
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
+  </div>
+</nav>
+
+<!-- Películas -->
+<div class="movies-container">
+  <h2>Lo último...</h2>
+
+  <div class="movies-list">
+    <button class="prev-btn" (click)="prevMovie()">←</button>
+
+    <!-- Mostramos solo 3 películas -->
+    <div *ngFor="let movie of getVisibleMovies(); let i = index" class="movie-card">
+      <img [src]="movie.urlimage" alt="{{ movie.namemovie }}" class="movie-image" />
+      <h3>{{ movie.namemovie }}</h3>
+      <button (click)="goToLogin()" class="view-options-btn">Ver opciones</button>
+    </div>
+
+    <button class="next-btn" (click)="nextMovie()">→</button>
+  </div>
+</div>

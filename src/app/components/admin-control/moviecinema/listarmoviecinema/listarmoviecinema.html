@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="title-container">
+    <h1>Lista de Funciones de Películas</h1>
+  </div>
+
+  <div class="card-container">
+    <mat-card *ngFor="let element of dataSource.data">
+      <mat-card-header>
+        <mat-card-title>
+          {{ element.movies_id.namemovie }} |
+          {{ element.cinemarooms_id.cinema.localname }} - Sala {{ element.cinemarooms_id.rooms.nameroom }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Código: {{ element.id }}</p>
+        <p>Película: {{ element.movies_id.namemovie }}</p>
+        <p>Cine: {{ element.cinemarooms_id.cinema.localname }}</p>
+        <p>Sala: {{ element.cinemarooms_id.rooms.nameroom }}</p>
+        <p>Ciudad: {{ element.cinemarooms_id.cinema.cities.namecity }}</p>
+        <p>Inicio: {{ element.startinghour | date:'shortTime' }}</p>
+        <p>Fin: {{ element.endinghour | date:'shortTime' }}</p>
+
+        <div class="button-container-right">
+          <!-- <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['ediciones', element.id]"
+          >
+            <mat-icon>edit</mat-icon>
+          </button> -->
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="eliminar(element.id)"
+          >
+            <mat-icon>delete_sweep</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-paginator
+    [pageSizeOptions]="[2, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  ></mat-paginator>
+</div>

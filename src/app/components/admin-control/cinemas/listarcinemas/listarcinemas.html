@@ -1,0 +1,59 @@
+<section class="viewdetail">
+  <div class="title-container">
+    <h1 class="title">Lista de Cines</h1>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let c">{{ c.id }}</td>
+      </ng-container>
+
+      <!-- Nombre del cine -->
+      <ng-container matColumnDef="localname">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let c">{{ c.localname }}</td>
+      </ng-container>
+
+      <!-- Imagen -->
+      <ng-container matColumnDef="urlimage">
+        <th mat-header-cell *matHeaderCellDef>Imagen</th>
+        <td mat-cell *matCellDef="let c">
+          <img [src]="c.urlimage" alt="Imagen del cine" width="100" style="border-radius: 8px;" />
+        </td>
+      </ng-container>
+
+      <!-- Ciudad -->
+      <ng-container matColumnDef="Cities">
+        <th mat-header-cell *matHeaderCellDef>Ciudad</th>
+        <td mat-cell *matCellDef="let c">{{ c.cities?.namecity }}</td>
+      </ng-container>
+
+      <!-- Acciones (solo admin) -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let c">
+          <ng-container *ngIf="isAdmin()">
+            <button mat-icon-button color="primary" (click)="editar(c.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="eliminar(c.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </ng-container>
+        </td>
+      </ng-container>
+
+      <!-- Header y Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- Paginador -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Paginador de cines">
+    </mat-paginator>
+  </div>
+</section>

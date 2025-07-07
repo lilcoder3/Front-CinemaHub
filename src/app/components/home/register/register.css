@@ -1,0 +1,58 @@
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(to right, #92a8d1, #73c8a9); /* Fondo con un gradiente */
+  height: 100vh;
+}
+
+.form-container {
+  width: 40%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.image-container {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.promotion-text {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.promotion-text h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.promotion-text p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}

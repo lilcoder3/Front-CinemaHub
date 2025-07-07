@@ -1,0 +1,38 @@
+<div class="title-container">
+  <h1 class="title">Registro de Funciones</h1>
+</div>
+
+<div class="container" style="text-align: center">
+  <form [formGroup]="form" (ngSubmit)="guardar()" class="example-form">
+
+    <mat-form-field class="example-full-width" *ngIf="edicion">
+      <mat-label>Código</mat-label>
+      <input matInput placeholder="Código" formControlName="codigo" readonly />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Total de Sillas</mat-label>
+      <input matInput type="number" formControlName="totalchair" required />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>MovieCinema</mat-label>
+      <mat-select formControlName="moviecinema_id" required>
+        <mat-option *ngFor="let mc of listaMovieCinemas" [value]="mc.id">
+          {{ mc.movies_id.namemovie }} | {{ mc.cinemarooms_id.cinema.localname }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Usuario</mat-label>
+      <input matInput [value]="currentUser.username" disabled />
+      <input type="hidden" formControlName="user_id" />
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="warn" [routerLink]="['/funcionescine']">Cancelar</button>
+    </div>
+  </form>
+</div>

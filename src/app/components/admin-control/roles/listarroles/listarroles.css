@@ -1,0 +1,65 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title-container h1 {
+  color: #2196f3;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.15);
+}
+
+mat-card-title {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+mat-card-content p {
+  margin: 0.3rem 0;
+}
+
+.button-container-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button[color="primary"] {
+  background-color: #2196f3;
+  color: white;
+}
+
+button[color="primary"]:hover {
+  background-color: #1976d2;
+}
+
+mat-paginator {
+  margin-top: 2rem;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+}

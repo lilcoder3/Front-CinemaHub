@@ -1,0 +1,15 @@
+<div style="text-align: center;">
+  <h2>Funciones por Usuario y Fecha</h2>
+
+  <label for="username">Usuario:</label>
+  <input id="username" type="text" [(ngModel)]="username" placeholder="Ej: admin" />
+  <button (click)="buscarFuncionesPorUsuario()">Buscar</button>
+
+  <div class="chart-container" style="max-width: 700px; margin: 20px auto;">
+    <canvas baseChart
+      [data]="barChartData"
+      [type]="barChartType"
+      [options]="{ responsive: true }">
+    </canvas>
+  </div>
+</div>

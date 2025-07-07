@@ -1,0 +1,50 @@
+.group {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title-container h1 {
+  color: #2196f3;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+mat-form-field {
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+}
+
+mat-error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+}
+
+button {
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+button[color="warn"] {
+  background-color: #f44336;
+  color: white;
+}
+
+button[color="warn"]:hover {
+  background-color: #d32f2f;
+}

@@ -1,0 +1,60 @@
+.welcome-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: #ffffffdd;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #233142;
+}
+.movie-image {
+  width: 100%;          /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  max-width: 350px;     /* Limita el tamaño máximo de la imagen */
+  height: auto;         /* Mantiene la relación de aspecto */
+  border-radius: 10px;  /* Bordes redondeados para un estilo más suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Sombra suave para darle profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Transición suave en el hover */
+}
+
+.movie-image:hover {
+  transform: scale(1.05);  /* Escala ligeramente la imagen al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra en el hover */
+}
+
+.welcome-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #57614f;
+}
+
+.time-display p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #57614f;
+  font-weight: bold;
+}
+
+.support-info {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.support-info strong {
+  color: #3e4938;
+}
+
+.whatsapp-link {
+  color: #25d366;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #128c7e;
+  text-decoration: underline;
+}

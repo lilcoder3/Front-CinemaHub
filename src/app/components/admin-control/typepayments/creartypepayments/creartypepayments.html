@@ -1,0 +1,28 @@
+<div class="title-container">
+    <div class="title-container"><h1>Registro</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+
+      <mat-form-field appearance="fill" *ngIf="ediciongender">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código" formControlName="id" readonly/>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="Nombre del tipo de pago" formControlName="paymentname" />
+        <mat-error *ngIf="form.get('paymentname')?.hasError('required')">
+          El nombre de pelicula es obligatorio.</mat-error
+        >
+      </mat-form-field>
+        <br />
+      <mat-form-field>
+        <input matInput placeholder="Imagen del tipo de pago" formControlName="urlimage" />
+        <mat-error *ngIf="form.get('urlimage')?.hasError('required')">
+          La imagen es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+      <button mat-raised-button color="warn" >Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/typepayment">Cancelar</button> 
+    </form>
+</div>
+  

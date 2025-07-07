@@ -1,0 +1,48 @@
+
+<section class="typeview">
+    <div class="view-users-container">
+    <h2 class="view-users-title">Lista de Tipos de Pagos</h2>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let typepay">{{ typepay.id }}</td>
+      </ng-container>
+  
+      <!-- Usuario Column -->
+      <ng-container matColumnDef="paymentname">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let typepay">{{ typepay.paymentname }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="urlimage">
+        <th mat-header-cell *matHeaderCellDef>Imagen</th>
+        <td mat-cell *matCellDef="let typepay">
+        <img [src]="typepay.urlimage" alt="Pago" /></td>
+      </ng-container>
+  
+      <!-- Acciones -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let detail" >
+          <ng-container>
+            <button mat-icon-button color="primary" (click)="editar(detail.id)" >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="delete(detail.id)" >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </ng-container>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+  </section>

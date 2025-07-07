@@ -1,0 +1,72 @@
+<section class="viewdetail">
+  <div class="title-container">
+    <h1 class="title">Reseñas de Películas</h1>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let r">{{ r.id }}</td>
+      </ng-container>
+
+      <!-- Fecha -->
+      <ng-container matColumnDef="reviewdate">
+        <th mat-header-cell *matHeaderCellDef>Fecha</th>
+        <td mat-cell *matCellDef="let r">{{ r.reviewdate | date }}</td>
+      </ng-container>
+
+      <!-- Descripción -->
+      <ng-container matColumnDef="descriptions">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let r">{{ r.descriptions }}</td>
+      </ng-container>
+
+      <!-- Puntos -->
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef>Puntos</th>
+        <td mat-cell *matCellDef="let r">{{ r.points }}</td>
+      </ng-container>
+
+      <!-- Película -->
+      <ng-container matColumnDef="movie">
+        <th mat-header-cell *matHeaderCellDef>Película</th>
+        <td mat-cell *matCellDef="let r">{{ r.movies_id?.namemovie }}</td>
+      </ng-container>
+
+      <!-- Usuario -->
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let r">{{ r.user_id?.username }}</td>
+      </ng-container>
+
+      <!-- Acciones -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let r">
+          <ng-container *ngIf="isAdmin()">
+            <button mat-icon-button color="primary" (click)="editar(r.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="delete(r.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </ng-container>
+        </td>
+      </ng-container>
+
+      <!-- Filas -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- Paginador -->
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Paginador de reseñas">
+    </mat-paginator>
+  </div>
+</section>
